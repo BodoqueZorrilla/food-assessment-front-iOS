@@ -7,15 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7FD68E812B2F8CB500699F09 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD68E802B2F8CB500699F09 /* UIImageView+Extension.swift */; };
+		7FD68E872B2FC50F00699F09 /* CategoryFoodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD68E862B2FC50F00699F09 /* CategoryFoodModel.swift */; };
+		7FD68E892B2FC58000699F09 /* CategoryFoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD68E882B2FC58000699F09 /* CategoryFoodViewModel.swift */; };
+		7FD68E8B2B2FC6C200699F09 /* CategoryFoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD68E8A2B2FC6C200699F09 /* CategoryFoodsViewController.swift */; };
+		7FD68E8E2B2FC95700699F09 /* CategoryFoodsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD68E8D2B2FC95700699F09 /* CategoryFoodsCollectionViewCell.swift */; };
 		7FDD74332B2EA7B000F0C50D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD74322B2EA7B000F0C50D /* AppDelegate.swift */; };
 		7FDD74352B2EA7B000F0C50D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD74342B2EA7B000F0C50D /* SceneDelegate.swift */; };
-		7FDD74372B2EA7B000F0C50D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD74362B2EA7B000F0C50D /* ViewController.swift */; };
-		7FDD743A2B2EA7B000F0C50D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FDD74382B2EA7B000F0C50D /* Main.storyboard */; };
 		7FDD743C2B2EA7B100F0C50D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FDD743B2B2EA7B100F0C50D /* Assets.xcassets */; };
 		7FDD743F2B2EA7B100F0C50D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FDD743D2B2EA7B100F0C50D /* LaunchScreen.storyboard */; };
 		7FDD744A2B2EA7B100F0C50D /* food_assessment_front_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD74492B2EA7B100F0C50D /* food_assessment_front_iOSTests.swift */; };
-		7FDD74542B2EA7B100F0C50D /* food_assessment_front_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD74532B2EA7B100F0C50D /* food_assessment_front_iOSUITests.swift */; };
-		7FDD74562B2EA7B100F0C50D /* food_assessment_front_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD74552B2EA7B100F0C50D /* food_assessment_front_iOSUITestsLaunchTests.swift */; };
+		7FDD74672B2EAA4100F0C50D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD74662B2EAA4100F0C50D /* HomeViewController.swift */; };
+		7FDD74692B2EAA5600F0C50D /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD74682B2EAA5600F0C50D /* Categories.swift */; };
+		7FDD746C2B2EAB2700F0C50D /* ApiCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD746B2B2EAB2700F0C50D /* ApiCaller.swift */; };
+		7FDD746E2B2EAC6500F0C50D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD746D2B2EAC6500F0C50D /* HomeViewModel.swift */; };
+		7FDD74712B2EB09600F0C50D /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD74702B2EB09600F0C50D /* CategoryCollectionViewCell.swift */; };
+		7FDD74732B2EB0BA00F0C50D /* ContentCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD74722B2EB0BA00F0C50D /* ContentCollectionViewHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,29 +33,28 @@
 			remoteGlobalIDString = 7FDD742E2B2EA7B000F0C50D;
 			remoteInfo = "food-assessment-front-iOS";
 		};
-		7FDD74502B2EA7B100F0C50D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7FDD74272B2EA7B000F0C50D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7FDD742E2B2EA7B000F0C50D;
-			remoteInfo = "food-assessment-front-iOS";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7FD68E802B2F8CB500699F09 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		7FD68E862B2FC50F00699F09 /* CategoryFoodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFoodModel.swift; sourceTree = "<group>"; };
+		7FD68E882B2FC58000699F09 /* CategoryFoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFoodViewModel.swift; sourceTree = "<group>"; };
+		7FD68E8A2B2FC6C200699F09 /* CategoryFoodsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFoodsViewController.swift; sourceTree = "<group>"; };
+		7FD68E8D2B2FC95700699F09 /* CategoryFoodsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFoodsCollectionViewCell.swift; sourceTree = "<group>"; };
 		7FDD742F2B2EA7B000F0C50D /* food-assessment-front-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "food-assessment-front-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FDD74322B2EA7B000F0C50D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FDD74342B2EA7B000F0C50D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7FDD74362B2EA7B000F0C50D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7FDD74392B2EA7B000F0C50D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7FDD743B2B2EA7B100F0C50D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7FDD743E2B2EA7B100F0C50D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7FDD74402B2EA7B100F0C50D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FDD74452B2EA7B100F0C50D /* food-assessment-front-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "food-assessment-front-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FDD74492B2EA7B100F0C50D /* food_assessment_front_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = food_assessment_front_iOSTests.swift; sourceTree = "<group>"; };
-		7FDD744F2B2EA7B100F0C50D /* food-assessment-front-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "food-assessment-front-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7FDD74532B2EA7B100F0C50D /* food_assessment_front_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = food_assessment_front_iOSUITests.swift; sourceTree = "<group>"; };
-		7FDD74552B2EA7B100F0C50D /* food_assessment_front_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = food_assessment_front_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7FDD74662B2EAA4100F0C50D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		7FDD74682B2EAA5600F0C50D /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		7FDD746B2B2EAB2700F0C50D /* ApiCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCaller.swift; sourceTree = "<group>"; };
+		7FDD746D2B2EAC6500F0C50D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		7FDD74702B2EB09600F0C50D /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		7FDD74722B2EB0BA00F0C50D /* ContentCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,22 +72,65 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7FDD744C2B2EA7B100F0C50D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7FD68E7F2B2F8CA300699F09 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7FD68E802B2F8CB500699F09 /* UIImageView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7FD68E822B2FC4DF00699F09 /* CategoryFoods */ = {
+			isa = PBXGroup;
+			children = (
+				7FD68E852B2FC4FF00699F09 /* Model */,
+				7FD68E842B2FC4F600699F09 /* ViewModel */,
+				7FD68E832B2FC4EA00699F09 /* View */,
+			);
+			path = CategoryFoods;
+			sourceTree = "<group>";
+		};
+		7FD68E832B2FC4EA00699F09 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7FD68E8C2B2FC93E00699F09 /* cell */,
+				7FD68E8A2B2FC6C200699F09 /* CategoryFoodsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7FD68E842B2FC4F600699F09 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7FD68E882B2FC58000699F09 /* CategoryFoodViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7FD68E852B2FC4FF00699F09 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7FD68E862B2FC50F00699F09 /* CategoryFoodModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7FD68E8C2B2FC93E00699F09 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				7FD68E8D2B2FC95700699F09 /* CategoryFoodsCollectionViewCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 		7FDD74262B2EA7B000F0C50D = {
 			isa = PBXGroup;
 			children = (
 				7FDD74312B2EA7B000F0C50D /* food-assessment-front-iOS */,
 				7FDD74482B2EA7B100F0C50D /* food-assessment-front-iOSTests */,
-				7FDD74522B2EA7B100F0C50D /* food-assessment-front-iOSUITests */,
 				7FDD74302B2EA7B000F0C50D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,7 +140,6 @@
 			children = (
 				7FDD742F2B2EA7B000F0C50D /* food-assessment-front-iOS.app */,
 				7FDD74452B2EA7B100F0C50D /* food-assessment-front-iOSTests.xctest */,
-				7FDD744F2B2EA7B100F0C50D /* food-assessment-front-iOSUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,10 +147,12 @@
 		7FDD74312B2EA7B000F0C50D /* food-assessment-front-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				7FD68E822B2FC4DF00699F09 /* CategoryFoods */,
+				7FD68E7F2B2F8CA300699F09 /* Extensions */,
+				7FDD746A2B2EAAD200F0C50D /* Networking */,
+				7FDD74622B2EA8C700F0C50D /* Home */,
 				7FDD74322B2EA7B000F0C50D /* AppDelegate.swift */,
 				7FDD74342B2EA7B000F0C50D /* SceneDelegate.swift */,
-				7FDD74362B2EA7B000F0C50D /* ViewController.swift */,
-				7FDD74382B2EA7B000F0C50D /* Main.storyboard */,
 				7FDD743B2B2EA7B100F0C50D /* Assets.xcassets */,
 				7FDD743D2B2EA7B100F0C50D /* LaunchScreen.storyboard */,
 				7FDD74402B2EA7B100F0C50D /* Info.plist */,
@@ -118,13 +168,56 @@
 			path = "food-assessment-front-iOSTests";
 			sourceTree = "<group>";
 		};
-		7FDD74522B2EA7B100F0C50D /* food-assessment-front-iOSUITests */ = {
+		7FDD74622B2EA8C700F0C50D /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				7FDD74532B2EA7B100F0C50D /* food_assessment_front_iOSUITests.swift */,
-				7FDD74552B2EA7B100F0C50D /* food_assessment_front_iOSUITestsLaunchTests.swift */,
+				7FDD74652B2EAA2C00F0C50D /* View */,
+				7FDD74642B2EAA2600F0C50D /* ViewModel */,
+				7FDD74632B2EAA2100F0C50D /* Model */,
 			);
-			path = "food-assessment-front-iOSUITests";
+			path = Home;
+			sourceTree = "<group>";
+		};
+		7FDD74632B2EAA2100F0C50D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7FDD74682B2EAA5600F0C50D /* Categories.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7FDD74642B2EAA2600F0C50D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7FDD746D2B2EAC6500F0C50D /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7FDD74652B2EAA2C00F0C50D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7FDD746F2B2EB06100F0C50D /* Cells */,
+				7FDD74662B2EAA4100F0C50D /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7FDD746A2B2EAAD200F0C50D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				7FDD746B2B2EAB2700F0C50D /* ApiCaller.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		7FDD746F2B2EB06100F0C50D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7FDD74702B2EB09600F0C50D /* CategoryCollectionViewCell.swift */,
+				7FDD74722B2EB0BA00F0C50D /* ContentCollectionViewHeader.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,24 +258,6 @@
 			productReference = 7FDD74452B2EA7B100F0C50D /* food-assessment-front-iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		7FDD744E2B2EA7B100F0C50D /* food-assessment-front-iOSUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7FDD745F2B2EA7B100F0C50D /* Build configuration list for PBXNativeTarget "food-assessment-front-iOSUITests" */;
-			buildPhases = (
-				7FDD744B2B2EA7B100F0C50D /* Sources */,
-				7FDD744C2B2EA7B100F0C50D /* Frameworks */,
-				7FDD744D2B2EA7B100F0C50D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7FDD74512B2EA7B100F0C50D /* PBXTargetDependency */,
-			);
-			name = "food-assessment-front-iOSUITests";
-			productName = "food-assessment-front-iOSUITests";
-			productReference = 7FDD744F2B2EA7B100F0C50D /* food-assessment-front-iOSUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -197,10 +272,6 @@
 						CreatedOnToolsVersion = 14.2;
 					};
 					7FDD74442B2EA7B100F0C50D = {
-						CreatedOnToolsVersion = 14.2;
-						TestTargetID = 7FDD742E2B2EA7B000F0C50D;
-					};
-					7FDD744E2B2EA7B100F0C50D = {
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = 7FDD742E2B2EA7B000F0C50D;
 					};
@@ -221,7 +292,6 @@
 			targets = (
 				7FDD742E2B2EA7B000F0C50D /* food-assessment-front-iOS */,
 				7FDD74442B2EA7B100F0C50D /* food-assessment-front-iOSTests */,
-				7FDD744E2B2EA7B100F0C50D /* food-assessment-front-iOSUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -233,18 +303,10 @@
 			files = (
 				7FDD743F2B2EA7B100F0C50D /* LaunchScreen.storyboard in Resources */,
 				7FDD743C2B2EA7B100F0C50D /* Assets.xcassets in Resources */,
-				7FDD743A2B2EA7B000F0C50D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		7FDD74432B2EA7B100F0C50D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7FDD744D2B2EA7B100F0C50D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -258,9 +320,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FDD74372B2EA7B000F0C50D /* ViewController.swift in Sources */,
 				7FDD74332B2EA7B000F0C50D /* AppDelegate.swift in Sources */,
+				7FDD746E2B2EAC6500F0C50D /* HomeViewModel.swift in Sources */,
+				7FDD74692B2EAA5600F0C50D /* Categories.swift in Sources */,
+				7FD68E8E2B2FC95700699F09 /* CategoryFoodsCollectionViewCell.swift in Sources */,
+				7FD68E812B2F8CB500699F09 /* UIImageView+Extension.swift in Sources */,
 				7FDD74352B2EA7B000F0C50D /* SceneDelegate.swift in Sources */,
+				7FDD74672B2EAA4100F0C50D /* HomeViewController.swift in Sources */,
+				7FDD74732B2EB0BA00F0C50D /* ContentCollectionViewHeader.swift in Sources */,
+				7FDD74712B2EB09600F0C50D /* CategoryCollectionViewCell.swift in Sources */,
+				7FD68E8B2B2FC6C200699F09 /* CategoryFoodsViewController.swift in Sources */,
+				7FDD746C2B2EAB2700F0C50D /* ApiCaller.swift in Sources */,
+				7FD68E872B2FC50F00699F09 /* CategoryFoodModel.swift in Sources */,
+				7FD68E892B2FC58000699F09 /* CategoryFoodViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,15 +344,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7FDD744B2B2EA7B100F0C50D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7FDD74562B2EA7B100F0C50D /* food_assessment_front_iOSUITestsLaunchTests.swift in Sources */,
-				7FDD74542B2EA7B100F0C50D /* food_assessment_front_iOSUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -289,22 +352,9 @@
 			target = 7FDD742E2B2EA7B000F0C50D /* food-assessment-front-iOS */;
 			targetProxy = 7FDD74462B2EA7B100F0C50D /* PBXContainerItemProxy */;
 		};
-		7FDD74512B2EA7B100F0C50D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7FDD742E2B2EA7B000F0C50D /* food-assessment-front-iOS */;
-			targetProxy = 7FDD74502B2EA7B100F0C50D /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7FDD74382B2EA7B000F0C50D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7FDD74392B2EA7B000F0C50D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7FDD743D2B2EA7B100F0C50D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -442,9 +492,8 @@
 				INFOPLIST_FILE = "food-assessment-front-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -470,9 +519,8 @@
 				INFOPLIST_FILE = "food-assessment-front-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -526,42 +574,6 @@
 			};
 			name = Release;
 		};
-		7FDD74602B2EA7B100F0C50D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DF9W64C86F;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bodoque.food-assessment-front-iOSUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "food-assessment-front-iOS";
-			};
-			name = Debug;
-		};
-		7FDD74612B2EA7B100F0C50D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DF9W64C86F;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bodoque.food-assessment-front-iOSUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "food-assessment-front-iOS";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -588,15 +600,6 @@
 			buildConfigurations = (
 				7FDD745D2B2EA7B100F0C50D /* Debug */,
 				7FDD745E2B2EA7B100F0C50D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7FDD745F2B2EA7B100F0C50D /* Build configuration list for PBXNativeTarget "food-assessment-front-iOSUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7FDD74602B2EA7B100F0C50D /* Debug */,
-				7FDD74612B2EA7B100F0C50D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
