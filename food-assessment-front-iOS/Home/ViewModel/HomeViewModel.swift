@@ -12,11 +12,11 @@ protocol HomeViewModelProtocol: AnyObject {
     func fetchCategories() async
 }
 
-class HomeViewModel: HomeViewModelProtocol {
+final class HomeViewModel: HomeViewModelProtocol {
     var mainCategories: Categories?
-    private var apiCaller = ApiCaller()
 
     func fetchCategories() async {
-        mainCategories = await apiCaller.fetch(type: Categories.self, from: PathsUrl.categories.pathId)
+        mainCategories = await ApiCaller.shared.fetch(type: Categories.self,
+                                                      from: PathsUrl.categories.pathId)
     }
 }

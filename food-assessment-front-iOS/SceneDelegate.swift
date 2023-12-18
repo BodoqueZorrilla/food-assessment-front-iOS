@@ -18,9 +18,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         var navController =  UINavigationController()
         navController = UINavigationController(rootViewController: viewController)
         navController.modalPresentationStyle = .fullScreen
-        UINavigationBar.appearance().barTintColor = .white
-        UINavigationBar.appearance().tintColor = .black
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
         self.window?.rootViewController = navController
         self.window?.makeKeyAndVisible()
     }

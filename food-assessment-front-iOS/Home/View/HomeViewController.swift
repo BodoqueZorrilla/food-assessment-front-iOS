@@ -7,12 +7,14 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
 
     lazy private var categoriesTableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .plain)
+        let tableView = UITableView()
         return tableView
     }()
+
+    private let categoryIdCell = "categoryIdCell"
 
     private var viewModel = HomeViewModel()
 
@@ -28,16 +30,12 @@ class HomeViewController: UIViewController {
     }
 
     private func setupUI() {
+        categoriesTableView = UITableView(frame: view.bounds, style: .plain)
         categoriesTableView.backgroundColor = .white
-        categoriesTableView.register(CategoryTableViewCell.self, forCellReuseIdentifier: "categoryCell")
         categoriesTableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(categoriesTableView)
-        NSLayoutConstraint.activate([
-            categoriesTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            categoriesTableView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
-            categoriesTableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
-            categoriesTableView.heightAnchor.constraint(equalToConstant: view.frame.height)
-        ])
+        categoriesTableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        categoriesTableView.register(CategoryTableViewCell.self, forCellReuseIdentifier: categoryIdCell)
         navigationItem.title = "Categories"
         navigationController?.navigationBar.prefersLargeTitles = true
     }
@@ -50,13 +48,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let myCell = tableView.dequeueReusableCell(withIdentifier: "categoryCell",
+        let myCell = tableView.dequeueReusableCell(withIdentifier: categoryIdCell,
                                                    for: indexPath) as? CategoryTableViewCell
         myCell?.category = viewModel.mainCategories?.categories[indexPath.row]
         return myCell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(viewModel.mainCategories?.categories[indexPath.row])
+        let categorFoodsViewModel = CategoryFoodViewModel(categoryName: viewModel.mainCategories?.categories[indexPath.row].strCategory ?? "")
+        let sectionDetailVC = CategoryFoodsViewController(viewModel: categorFoodsViewModel)
+        self.show(sectionDetailVC, sender: nil)
     }
 }

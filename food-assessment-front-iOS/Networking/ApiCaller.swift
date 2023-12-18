@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct ApiCaller {
+final class ApiCaller {
+    static let shared = ApiCaller()
     private let mainURL = "http://localhost:6060"
     private let decoder: JSONDecoder = {
         let decoder = JSONDecoder()
