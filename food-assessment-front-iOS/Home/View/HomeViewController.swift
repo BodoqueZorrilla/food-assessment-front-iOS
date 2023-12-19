@@ -30,14 +30,43 @@ final class HomeViewController: UIViewController {
     }
 
     private func setupUI() {
+        self.view.backgroundColor = .white
+        setupNavigationBar()
+        setupTableView()
+    }
+
+    private func setupNavigationBar() {
+        navigationItem.title = "Categories"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        let navBarButton = UIBarButtonItem(image: UIImage(systemName: "cart"),
+                                           style: .plain,
+                                           target: self,
+                                           action: nil)
+        navBarButton.action = #selector(barButtonAction)
+        navigationItem.rightBarButtonItems = [navBarButton]
+        navigationController?.navigationBar.tintColor = .black
+    }
+
+    @objc
+    private func barButtonAction() {
+        let viewController = ShoppingCartViewController()
+        self.show(viewController, sender: nil)
+    }
+
+    private func setupTableView() {
         categoriesTableView = UITableView(frame: view.bounds, style: .plain)
         categoriesTableView.backgroundColor = .white
         categoriesTableView.translatesAutoresizingMaskIntoConstraints = false
+        categoriesTableView.showsVerticalScrollIndicator = false
+        categoriesTableView.separatorStyle = .none
         view.addSubview(categoriesTableView)
-        categoriesTableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        NSLayoutConstraint.activate([
+            categoriesTableView.topAnchor.constraint(equalTo: view.topAnchor),
+            categoriesTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            categoriesTableView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            categoriesTableView.rightAnchor.constraint(equalTo: view.rightAnchor)
+        ])
         categoriesTableView.register(CategoryTableViewCell.self, forCellReuseIdentifier: categoryIdCell)
-        navigationItem.title = "Categories"
-        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
 
@@ -50,6 +79,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let myCell = tableView.dequeueReusableCell(withIdentifier: categoryIdCell,
                                                    for: indexPath) as? CategoryTableViewCell
+        myCell?.contentView.layer.masksToBounds = true
+        myCell?.selectionStyle = .none
         myCell?.category = viewModel.mainCategories?.categories[indexPath.row]
         return myCell ?? UITableViewCell()
     }
@@ -58,5 +89,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let categorFoodsViewModel = CategoryFoodViewModel(categoryName: viewModel.mainCategories?.categories[indexPath.row].strCategory ?? "")
         let sectionDetailVC = CategoryFoodsViewController(viewModel: categorFoodsViewModel)
         self.show(sectionDetailVC, sender: nil)
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 300
     }
 }

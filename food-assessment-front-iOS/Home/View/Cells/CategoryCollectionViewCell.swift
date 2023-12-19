@@ -18,23 +18,29 @@ final class CategoryTableViewCell: UITableViewCell {
 
     lazy private var nameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = UIFont.boldSystemFont(ofSize: 16)
         label.textColor = .white
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = .black.withAlphaComponent(0.5)
+        label.layer.masksToBounds = true
+        label.layer.cornerRadius = 8
+        label.layer.borderWidth = 2
+        label.layer.borderColor = UIColor.black.cgColor
         return label
     }()
 
-    lazy private var stackView: UIStackView = {
-        let sv = UIStackView()
-        sv.axis  = .vertical
-        sv.alignment = .center
-        sv.distribution = .fillEqually
-        sv.spacing = 5
-        sv.translatesAutoresizingMaskIntoConstraints = false
-        sv.layer.cornerRadius = 5
-        return sv
+    lazy private var cardView: UIView = {
+        let view = UIView()
+        view.layer.masksToBounds = false
+        view.layer.shadowOpacity = 0.23
+        view.layer.shadowRadius = 4
+        view.layer.shadowOffset = CGSize(width: 0, height: 0)
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 8
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -47,22 +53,24 @@ final class CategoryTableViewCell: UITableViewCell {
     }
 
     private func addViews(){
-        addSubview(stackView)
-        categoryImageView.heightAnchor.constraint(equalTo: categoryImageView.widthAnchor).isActive = true
-        stackView.addArrangedSubview(categoryImageView)
-        stackView.addArrangedSubview(nameLabel)
+        addSubview(cardView)
+        cardView.addSubview(categoryImageView)
+        cardView.addSubview(nameLabel)
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 5),
-            stackView.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            nameLabel.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
-            nameLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
-            categoryImageView.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 5),
-            categoryImageView.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
-            categoryImageView.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
-            categoryImageView.widthAnchor.constraint(equalToConstant: 200)
+            cardView.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor),
+            cardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            cardView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            cardView.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor),
+            categoryImageView.topAnchor.constraint(equalTo: cardView.topAnchor),
+            categoryImageView.leadingAnchor.constraint(equalTo:cardView.leadingAnchor),
+            categoryImageView.trailingAnchor.constraint(equalTo: cardView.trailingAnchor),
+            categoryImageView.widthAnchor.constraint(equalToConstant: 200),
+            nameLabel.heightAnchor.constraint(equalToConstant: 60),
+            nameLabel.topAnchor.constraint(equalTo: categoryImageView.bottomAnchor),
+            nameLabel.leadingAnchor.constraint(equalTo: cardView.leadingAnchor),
+            nameLabel.trailingAnchor.constraint(equalTo: cardView.trailingAnchor),
+            nameLabel.bottomAnchor.constraint(equalTo: cardView.bottomAnchor)
         ])
         
 
@@ -71,7 +79,7 @@ final class CategoryTableViewCell: UITableViewCell {
     var category: Category? {
         didSet {
             guard let category = category else { return }
-            nameLabel.text = category.strCategory
+            nameLabel.text = "   \(category.strCategory)"
             DispatchQueue.main.async {
                 self.categoryImageView.loadImageUsingCache(withUrl: category.strCategoryThumb)
             }

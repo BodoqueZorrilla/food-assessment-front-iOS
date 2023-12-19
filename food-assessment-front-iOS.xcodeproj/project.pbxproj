@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F3E3D3F2B30B76700E55E3E /* CustomStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3D3E2B30B76700E55E3E /* CustomStepperView.swift */; };
+		7F4349022B312EE5003ACD93 /* ShoppingCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4349012B312EE5003ACD93 /* ShoppingCartViewModel.swift */; };
+		7F4349042B313361003ACD93 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4349032B313361003ACD93 /* CartTableViewCell.swift */; };
 		7FD68E812B2F8CB500699F09 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD68E802B2F8CB500699F09 /* UIImageView+Extension.swift */; };
 		7FD68E872B2FC50F00699F09 /* CategoryFoodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD68E862B2FC50F00699F09 /* CategoryFoodModel.swift */; };
 		7FD68E892B2FC58000699F09 /* CategoryFoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD68E882B2FC58000699F09 /* CategoryFoodViewModel.swift */; };
@@ -22,7 +25,9 @@
 		7FDD746C2B2EAB2700F0C50D /* ApiCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD746B2B2EAB2700F0C50D /* ApiCaller.swift */; };
 		7FDD746E2B2EAC6500F0C50D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD746D2B2EAC6500F0C50D /* HomeViewModel.swift */; };
 		7FDD74712B2EB09600F0C50D /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD74702B2EB09600F0C50D /* CategoryCollectionViewCell.swift */; };
-		7FDD74732B2EB0BA00F0C50D /* ContentCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD74722B2EB0BA00F0C50D /* ContentCollectionViewHeader.swift */; };
+		7FF129AB2B30A08C00EE2A1D /* ShoppingCart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FF129A92B30A08C00EE2A1D /* ShoppingCart.xcdatamodeld */; };
+		7FF129B12B30A1DF00EE2A1D /* MCartShopping+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF129B02B30A1DF00EE2A1D /* MCartShopping+CoreDataClass.swift */; };
+		7FF129B32B30A7B600EE2A1D /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF129B22B30A7B600EE2A1D /* ShoppingCartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F3E3D3E2B30B76700E55E3E /* CustomStepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStepperView.swift; sourceTree = "<group>"; };
+		7F4349012B312EE5003ACD93 /* ShoppingCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewModel.swift; sourceTree = "<group>"; };
+		7F4349032B313361003ACD93 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		7FD68E802B2F8CB500699F09 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		7FD68E862B2FC50F00699F09 /* CategoryFoodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFoodModel.swift; sourceTree = "<group>"; };
 		7FD68E882B2FC58000699F09 /* CategoryFoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFoodViewModel.swift; sourceTree = "<group>"; };
@@ -54,7 +62,9 @@
 		7FDD746B2B2EAB2700F0C50D /* ApiCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCaller.swift; sourceTree = "<group>"; };
 		7FDD746D2B2EAC6500F0C50D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		7FDD74702B2EB09600F0C50D /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
-		7FDD74722B2EB0BA00F0C50D /* ContentCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewHeader.swift; sourceTree = "<group>"; };
+		7FF129AA2B30A08C00EE2A1D /* ShoppingCart.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShoppingCart.xcdatamodel; sourceTree = "<group>"; };
+		7FF129B02B30A1DF00EE2A1D /* MCartShopping+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MCartShopping+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7FF129B22B30A7B600EE2A1D /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +157,8 @@
 		7FDD74312B2EA7B000F0C50D /* food-assessment-front-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				7FF129AC2B30A1A700EE2A1D /* ShoopingCart */,
+				7FF129A82B30A07700EE2A1D /* Storage */,
 				7FD68E822B2FC4DF00699F09 /* CategoryFoods */,
 				7FD68E7F2B2F8CA300699F09 /* Extensions */,
 				7FDD746A2B2EAAD200F0C50D /* Networking */,
@@ -215,9 +227,52 @@
 			isa = PBXGroup;
 			children = (
 				7FDD74702B2EB09600F0C50D /* CategoryCollectionViewCell.swift */,
-				7FDD74722B2EB0BA00F0C50D /* ContentCollectionViewHeader.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		7FF129A82B30A07700EE2A1D /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				7FF129A92B30A08C00EE2A1D /* ShoppingCart.xcdatamodeld */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		7FF129AC2B30A1A700EE2A1D /* ShoopingCart */ = {
+			isa = PBXGroup;
+			children = (
+				7FF129AF2B30A1CA00EE2A1D /* Model */,
+				7FF129AE2B30A1B700EE2A1D /* ViewModel */,
+				7FF129AD2B30A1B100EE2A1D /* View */,
+			);
+			path = ShoopingCart;
+			sourceTree = "<group>";
+		};
+		7FF129AD2B30A1B100EE2A1D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7FF129B22B30A7B600EE2A1D /* ShoppingCartViewController.swift */,
+				7F3E3D3E2B30B76700E55E3E /* CustomStepperView.swift */,
+				7F4349032B313361003ACD93 /* CartTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7FF129AE2B30A1B700EE2A1D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7F4349012B312EE5003ACD93 /* ShoppingCartViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7FF129AF2B30A1CA00EE2A1D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7FF129B02B30A1DF00EE2A1D /* MCartShopping+CoreDataClass.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,16 +378,21 @@
 				7FDD74332B2EA7B000F0C50D /* AppDelegate.swift in Sources */,
 				7FDD746E2B2EAC6500F0C50D /* HomeViewModel.swift in Sources */,
 				7FDD74692B2EAA5600F0C50D /* Categories.swift in Sources */,
+				7F4349042B313361003ACD93 /* CartTableViewCell.swift in Sources */,
 				7FD68E8E2B2FC95700699F09 /* CategoryFoodsCollectionViewCell.swift in Sources */,
 				7FD68E812B2F8CB500699F09 /* UIImageView+Extension.swift in Sources */,
 				7FDD74352B2EA7B000F0C50D /* SceneDelegate.swift in Sources */,
+				7FF129B12B30A1DF00EE2A1D /* MCartShopping+CoreDataClass.swift in Sources */,
+				7F4349022B312EE5003ACD93 /* ShoppingCartViewModel.swift in Sources */,
 				7FDD74672B2EAA4100F0C50D /* HomeViewController.swift in Sources */,
-				7FDD74732B2EB0BA00F0C50D /* ContentCollectionViewHeader.swift in Sources */,
+				7FF129B32B30A7B600EE2A1D /* ShoppingCartViewController.swift in Sources */,
 				7FDD74712B2EB09600F0C50D /* CategoryCollectionViewCell.swift in Sources */,
 				7FD68E8B2B2FC6C200699F09 /* CategoryFoodsViewController.swift in Sources */,
+				7F3E3D3F2B30B76700E55E3E /* CustomStepperView.swift in Sources */,
 				7FDD746C2B2EAB2700F0C50D /* ApiCaller.swift in Sources */,
 				7FD68E872B2FC50F00699F09 /* CategoryFoodModel.swift in Sources */,
 				7FD68E892B2FC58000699F09 /* CategoryFoodViewModel.swift in Sources */,
+				7FF129AB2B30A08C00EE2A1D /* ShoppingCart.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +554,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -521,6 +582,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -605,6 +667,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7FF129A92B30A08C00EE2A1D /* ShoppingCart.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7FF129AA2B30A08C00EE2A1D /* ShoppingCart.xcdatamodel */,
+			);
+			currentVersion = 7FF129AA2B30A08C00EE2A1D /* ShoppingCart.xcdatamodel */;
+			path = ShoppingCart.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7FDD74272B2EA7B000F0C50D /* Project object */;
 }

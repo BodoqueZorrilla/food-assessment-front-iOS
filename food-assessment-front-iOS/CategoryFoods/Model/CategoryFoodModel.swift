@@ -13,4 +13,5 @@ struct CategoryFoodModel: Codable {
     let strMealThumb: String
     let strCategory: String
     let doublePrice: Double
+    var quantity: Int?
 }

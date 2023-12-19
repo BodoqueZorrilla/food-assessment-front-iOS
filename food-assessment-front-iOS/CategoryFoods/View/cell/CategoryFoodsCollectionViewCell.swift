@@ -19,7 +19,7 @@ class CategoryFoodsCollectionViewCell: UICollectionViewCell {
     lazy private var nameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-        label.numberOfLines = 0
+        label.numberOfLines = 2
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -32,22 +32,35 @@ class CategoryFoodsCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    lazy private var stepperView: CustomStepperView = {
+        let stepper = CustomStepperView(frame: .zero)
+        stepper.translatesAutoresizingMaskIntoConstraints = false
+        return stepper
+    }()
 
-    func setupViews() {
+    private func setupViews() {
         foodImageView.heightAnchor.constraint(equalTo: foodImageView.widthAnchor).isActive = true
         
         let stackView = UIStackView(arrangedSubviews: [
             foodImageView,
             nameLabel,
-            priceLabel
+            priceLabel,
+            stepperView
         ])
         stackView.axis = .vertical
         stackView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(stackView)
-        stackView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        stackView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            stackView.leftAnchor.constraint(equalTo: leftAnchor),
+            stackView.rightAnchor.constraint(equalTo: rightAnchor),
+            stepperView.heightAnchor.constraint(equalToConstant: 40),
+            stepperView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+            stepperView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor)
+        ])
     }
 
     override init(frame: CGRect) {
@@ -59,11 +72,14 @@ class CategoryFoodsCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    var food: CategoryFoodModel? {
-        didSet {
-            guard let food = food else { return }
-            nameLabel.text = food.strMeal
-            priceLabel.text = "$\(food.doublePrice)"
+    func setupCell(food: CategoryFoodModel, viewModel: CategoryFoodViewModel){
+        nameLabel.text = food.strMeal
+        priceLabel.text = "$\(food.doublePrice)"
+        stepperView.meal = food
+        stepperView.delegate = viewModel
+        stepperView.quantityLabel.text =  "\(viewModel.singleMeal(meal: food.idMeal) )"
+        DispatchQueue.main.async {
+            self.foodImageView.loadImageUsingCache(withUrl: food.strMealThumb)
         }
     }
 }
