@@ -42,17 +42,20 @@ final class CategoryFoodsViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId,
-                                                      for: indexPath) as? CategoryFoodsCollectionViewCell
-        cell?.food = viewModel?.categoryFoods?[indexPath.item]
-        return cell ?? UICollectionViewCell()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId,
+                                                      for: indexPath) as? CategoryFoodsCollectionViewCell,
+              let viewModel = viewModel,
+              let food = viewModel.categoryFoods?[indexPath.item]
+        else { return UICollectionViewCell() }
+        cell.setupCell(food: food, viewModel: viewModel)
+        return cell
     }
 }
 
 extension CategoryFoodsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (view.frame.width - 3 * 16) / 2
-        return .init(width: width, height: width + 46)
+        return .init(width: width, height: width + 100)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
