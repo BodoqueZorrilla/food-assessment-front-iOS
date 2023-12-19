@@ -17,6 +17,7 @@ final class HomeViewController: UIViewController {
     private let categoryIdCell = "categoryIdCell"
 
     private var viewModel = HomeViewModel()
+    private var notificationButton = SSBadgeButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,12 @@ final class HomeViewController: UIViewController {
         categoriesTableView.delegate = self
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.setQuantityCart()
+        notificationButton.badge = "\(viewModel.quantityCart ?? 0)"
+    }
+
     private func setupUI() {
         self.view.backgroundColor = .white
         setupNavigationBar()
@@ -38,12 +45,12 @@ final class HomeViewController: UIViewController {
     private func setupNavigationBar() {
         navigationItem.title = "Categories"
         navigationController?.navigationBar.prefersLargeTitles = true
-        let navBarButton = UIBarButtonItem(image: UIImage(systemName: "cart"),
-                                           style: .plain,
-                                           target: self,
-                                           action: nil)
-        navBarButton.action = #selector(barButtonAction)
-        navigationItem.rightBarButtonItems = [navBarButton]
+        notificationButton.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+        notificationButton.setImage(UIImage(systemName: "cart")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        notificationButton.badgeEdgeInsets = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 15)
+        notificationButton.addTarget(self, action: #selector(barButtonAction), for: .touchUpInside)
+
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: notificationButton)
         navigationController?.navigationBar.tintColor = .black
     }
 

@@ -61,6 +61,29 @@ final class ShoppingCartViewModel: ShoppingCartViewModelProtocol {
             fatalError("Failed to fetch user: \(error)")
         }
     }
+
+    func eraseCart() {
+        guard let moc = moc else { return }
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>()
+        fetchRequest.entity = NSEntityDescription.entity(forEntityName: "MCart", in: moc)
+        fetchRequest.includesPropertyValues = false
+        do {
+            if let results = try moc.fetch(fetchRequest) as? [NSManagedObject] {
+                moc.performAndWait {
+                    do {
+                        for result in results {
+                            moc.delete(result)
+                        }
+                        try moc.save()
+                    }catch {
+                        print("deleteAllData", "Error in deleteAllData Meals")
+                    }
+                }
+            }
+        } catch {
+            print("deleteAllData", "Error in deleteAllData Meals")
+        }
+    }
 }
 
 extension ShoppingCartViewModel: StepperDelegate {
@@ -69,6 +92,7 @@ extension ShoppingCartViewModel: StepperDelegate {
     }
     
     func updateQuantity(isMore: Bool, meal: CategoryFoodModel) -> Int {
+        setTotalCart()
         HandlerFoodInCartManager.shared.handlerQuantity(isMore: isMore, meal: meal)
         return HandlerFoodInCartManager.shared.singleMeal(meal: meal.idMeal)
     }

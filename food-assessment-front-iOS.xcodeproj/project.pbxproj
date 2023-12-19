@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F1D69C92B324A0800883EE6 /* CustomBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1D69C82B324A0800883EE6 /* CustomBadgeView.swift */; };
 		7F3E3D3F2B30B76700E55E3E /* CustomStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3D3E2B30B76700E55E3E /* CustomStepperView.swift */; };
 		7F4349022B312EE5003ACD93 /* ShoppingCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4349012B312EE5003ACD93 /* ShoppingCartViewModel.swift */; };
 		7F4349042B313361003ACD93 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4349032B313361003ACD93 /* CartTableViewCell.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F1D69C82B324A0800883EE6 /* CustomBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBadgeView.swift; sourceTree = "<group>"; };
 		7F3E3D3E2B30B76700E55E3E /* CustomStepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStepperView.swift; sourceTree = "<group>"; };
 		7F4349012B312EE5003ACD93 /* ShoppingCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewModel.swift; sourceTree = "<group>"; };
 		7F4349032B313361003ACD93 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			children = (
 				7FDD746F2B2EB06100F0C50D /* Cells */,
 				7FDD74662B2EAA4100F0C50D /* HomeViewController.swift */,
+				7F1D69C82B324A0800883EE6 /* CustomBadgeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				7F3E3D3F2B30B76700E55E3E /* CustomStepperView.swift in Sources */,
 				7FDD746C2B2EAB2700F0C50D /* ApiCaller.swift in Sources */,
 				7FD68E872B2FC50F00699F09 /* CategoryFoodModel.swift in Sources */,
+				7F1D69C92B324A0800883EE6 /* CustomBadgeView.swift in Sources */,
 				7FD68E892B2FC58000699F09 /* CategoryFoodViewModel.swift in Sources */,
 				7FF129AB2B30A08C00EE2A1D /* ShoppingCart.xcdatamodeld in Sources */,
 			);

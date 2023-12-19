@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Stripe
 import StripePaymentSheet
 
 class ShoppingCartViewController: UIViewController {
@@ -40,7 +41,6 @@ class ShoppingCartViewController: UIViewController {
         cartTableView.delegate = self
         viewModel.fetchShoppongCart()
         cartTableView.reloadData()
-        fetchPaymentIntent()
     }
 
     private func setupUI() {
@@ -85,7 +85,7 @@ class ShoppingCartViewController: UIViewController {
         let task = URLSession.shared.dataTask(with: request, completionHandler: { [weak self] (data, response, error) in
             guard
                 let response = response as? HTTPURLResponse,
-                response.statusCode == 200,
+                response.statusCode == 201,
                 let data = data,
                 let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String : Any],
                 let clientSecret = json["clientSecret"] as? String
@@ -109,8 +109,11 @@ class ShoppingCartViewController: UIViewController {
     private func displayAlert(title: String, message: String? = nil) {
         DispatchQueue.main.async {
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: .default))
-            self.present(alertController, animated: true)
+            alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+                self.viewModel.eraseCart()
+                self.goToGome()
+            }))
+            self.present(alertController, animated: true, completion: nil)
         }
     }
 
@@ -119,9 +122,10 @@ class ShoppingCartViewController: UIViewController {
         guard let paymentIntentClientSecret = self.paymentIntentClientSecret else {
             return
         }
-        
+        STPAPIClient.shared.publishableKey = Bundle.infoPlistValue(forKey: "API_KEY") as? String
         var configuration = PaymentSheet.Configuration()
         configuration.merchantDisplayName = "Assessment Food, Inc."
+        configuration.returnURL = "your-app://stripe-redirect"
         
         
         let paymentSheet = PaymentSheet(
@@ -139,11 +143,20 @@ class ShoppingCartViewController: UIViewController {
             }
         }
     }
+
+    private func goToGome() {
+        if let contactVC = self.navigationController?.viewControllers.filter({ $0 is HomeViewController }).first {
+            self.navigationController?.popToViewController(contactVC, animated: true)
+        }
+    }
 }
 
 extension ShoppingCartViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if viewModel.mealsOfCart?.count ?? 0 > 0 {
+            fetchPaymentIntent()
+        }
         return viewModel.mealsOfCart?.count ?? 0
     }
     
@@ -158,5 +171,14 @@ extension ShoppingCartViewController: UITableViewDelegate, UITableViewDataSource
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
+    }
+}
+
+extension Bundle {
+    static func infoPlistValue(forKey key: String) -> Any? {
+        guard let value = Bundle.main.object(forInfoDictionaryKey: key) else {
+           return nil
+        }
+        return value
     }
 }
