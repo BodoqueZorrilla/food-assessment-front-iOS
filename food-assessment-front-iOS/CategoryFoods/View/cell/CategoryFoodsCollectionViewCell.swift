@@ -77,7 +77,7 @@ class CategoryFoodsCollectionViewCell: UICollectionViewCell {
         priceLabel.text = "$\(food.doublePrice)"
         stepperView.meal = food
         stepperView.delegate = viewModel
-        stepperView.quantityLabel.text =  "\(viewModel.singleMeal(meal: food.idMeal) )"
+        stepperView.quantityLabel.text =  "\(HandlerFoodInCartManager.shared.singleMeal(meal: food.idMeal))"
         DispatchQueue.main.async {
             self.foodImageView.loadImageUsingCache(withUrl: food.strMealThumb)
         }

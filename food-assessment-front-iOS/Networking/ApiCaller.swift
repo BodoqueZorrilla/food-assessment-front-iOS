@@ -28,12 +28,33 @@ final class ApiCaller {
             return nil
         }
     }
+
+    func postInfo<T: Codable, E: Encodable>(type: T.Type, encoder: E, from urlString: String) async -> T? {
+        guard let url = URL(string: urlString) else { return nil }
+        var urlRequest = URLRequest(url: url)
+        urlRequest.addValue("application/json; charset=UTF-8",
+                            forHTTPHeaderField: "Content-Type")
+        urlRequest.addValue("*/*", forHTTPHeaderField: "Accept")
+        urlRequest.httpMethod = "POST"
+        do {
+            let payload = try JSONEncoder().encode(encoder)
+            let (data, respomse) = try await URLSession
+                .shared
+                .upload(for: urlRequest, from: payload)
+            print(respomse)
+            return try decoder.decode(type, from: data)
+        } catch {
+            print(error)
+            return nil
+        }
+    }
 }
 
 enum PathsUrl {
     case categories
     case categoryFoods(category: String)
     case food(category: String, id: String)
+    case paymentIntent
     
     var pathId: String {
         switch self {
@@ -43,6 +64,8 @@ enum PathsUrl {
             return "/category/foods/\(category)"
         case .food(let category, let id):
             return "/\(category)/food/\(id)"
+        case .paymentIntent:
+            return "/create-payment-intent"
         }
     }
 }

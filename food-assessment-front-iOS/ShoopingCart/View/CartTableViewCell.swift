@@ -9,6 +9,7 @@ import UIKit
 
 final class CartTableViewCell: UITableViewCell {
 
+    var viewModel: ShoppingCartViewModel?
     
     lazy private var mealImageView: UIImageView = {
         var img = UIImageView(image: #imageLiteral(resourceName: "OSLogo"))
@@ -65,8 +66,7 @@ final class CartTableViewCell: UITableViewCell {
 
     private func addViews(){
         addSubview(cardView)
-        
-        
+        isUserInteractionEnabled = true
         let stackView = UIStackView(arrangedSubviews: [
             nameLabel,
             priceLabel
@@ -85,7 +85,7 @@ final class CartTableViewCell: UITableViewCell {
         stackMainView.translatesAutoresizingMaskIntoConstraints = false
         cardView.addSubview(stackMainView)
         cardView.addSubview(stepperView)
-        
+
         NSLayoutConstraint.activate([
             cardView.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor),
             cardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
@@ -111,6 +111,7 @@ final class CartTableViewCell: UITableViewCell {
             guard let meal = meal else { return }
             nameLabel.text = meal.strMeal
             priceLabel.text = "$\(meal.doublePrice)"
+            stepperView.delegate = viewModel
             stepperView.countMealItem = meal.quantity ?? 2
             stepperView.quantityLabel.text =  "\(meal.quantity ?? 2)"
             DispatchQueue.main.async {
