@@ -7,11 +7,22 @@
 
 import UIKit
 import CoreData
+import Stripe
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+        let stripeHandled = StripeAPI.handleURLCallback(with: url)
+        if (stripeHandled) {
+            return true
+        } else {
+            // This was not a Stripe url – handle the URL normally as you would
+        }
+        return false
     }
 
     // MARK: - Core Data stack

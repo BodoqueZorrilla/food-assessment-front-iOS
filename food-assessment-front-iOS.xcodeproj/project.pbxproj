@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F1D69C92B324A0800883EE6 /* CustomBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1D69C82B324A0800883EE6 /* CustomBadgeView.swift */; };
 		7F3E3D3F2B30B76700E55E3E /* CustomStepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E3D3E2B30B76700E55E3E /* CustomStepperView.swift */; };
 		7F4349022B312EE5003ACD93 /* ShoppingCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4349012B312EE5003ACD93 /* ShoppingCartViewModel.swift */; };
 		7F4349042B313361003ACD93 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4349032B313361003ACD93 /* CartTableViewCell.swift */; };
+		7F4349072B3146EE003ACD93 /* HandlerFoodInCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4349062B3146EE003ACD93 /* HandlerFoodInCart.swift */; };
+		7F43490A2B314FD6003ACD93 /* Stripe in Frameworks */ = {isa = PBXBuildFile; productRef = 7F4349092B314FD6003ACD93 /* Stripe */; };
+		7F43490C2B314FD6003ACD93 /* StripePaymentSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 7F43490B2B314FD6003ACD93 /* StripePaymentSheet */; };
 		7FD68E812B2F8CB500699F09 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD68E802B2F8CB500699F09 /* UIImageView+Extension.swift */; };
 		7FD68E872B2FC50F00699F09 /* CategoryFoodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD68E862B2FC50F00699F09 /* CategoryFoodModel.swift */; };
 		7FD68E892B2FC58000699F09 /* CategoryFoodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD68E882B2FC58000699F09 /* CategoryFoodViewModel.swift */; };
@@ -41,9 +45,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F1D69C82B324A0800883EE6 /* CustomBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBadgeView.swift; sourceTree = "<group>"; };
 		7F3E3D3E2B30B76700E55E3E /* CustomStepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStepperView.swift; sourceTree = "<group>"; };
 		7F4349012B312EE5003ACD93 /* ShoppingCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewModel.swift; sourceTree = "<group>"; };
 		7F4349032B313361003ACD93 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		7F4349062B3146EE003ACD93 /* HandlerFoodInCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlerFoodInCart.swift; sourceTree = "<group>"; };
 		7FD68E802B2F8CB500699F09 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		7FD68E862B2FC50F00699F09 /* CategoryFoodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFoodModel.swift; sourceTree = "<group>"; };
 		7FD68E882B2FC58000699F09 /* CategoryFoodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFoodViewModel.swift; sourceTree = "<group>"; };
@@ -72,6 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F43490C2B314FD6003ACD93 /* StripePaymentSheet in Frameworks */,
+				7F43490A2B314FD6003ACD93 /* Stripe in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +93,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F4349052B3146D9003ACD93 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				7F4349062B3146EE003ACD93 /* HandlerFoodInCart.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		7FD68E7F2B2F8CA300699F09 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +173,7 @@
 		7FDD74312B2EA7B000F0C50D /* food-assessment-front-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				7F4349052B3146D9003ACD93 /* Helper */,
 				7FF129AC2B30A1A700EE2A1D /* ShoopingCart */,
 				7FF129A82B30A07700EE2A1D /* Storage */,
 				7FD68E822B2FC4DF00699F09 /* CategoryFoods */,
@@ -211,6 +228,7 @@
 			children = (
 				7FDD746F2B2EB06100F0C50D /* Cells */,
 				7FDD74662B2EAA4100F0C50D /* HomeViewController.swift */,
+				7F1D69C82B324A0800883EE6 /* CustomBadgeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -291,6 +309,10 @@
 			dependencies = (
 			);
 			name = "food-assessment-front-iOS";
+			packageProductDependencies = (
+				7F4349092B314FD6003ACD93 /* Stripe */,
+				7F43490B2B314FD6003ACD93 /* StripePaymentSheet */,
+			);
 			productName = "food-assessment-front-iOS";
 			productReference = 7FDD742F2B2EA7B000F0C50D /* food-assessment-front-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -341,6 +363,9 @@
 				Base,
 			);
 			mainGroup = 7FDD74262B2EA7B000F0C50D;
+			packageReferences = (
+				7F4349082B314FD6003ACD93 /* XCRemoteSwiftPackageReference "stripe-ios-spm" */,
+			);
 			productRefGroup = 7FDD74302B2EA7B000F0C50D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -380,6 +405,7 @@
 				7FDD74692B2EAA5600F0C50D /* Categories.swift in Sources */,
 				7F4349042B313361003ACD93 /* CartTableViewCell.swift in Sources */,
 				7FD68E8E2B2FC95700699F09 /* CategoryFoodsCollectionViewCell.swift in Sources */,
+				7F4349072B3146EE003ACD93 /* HandlerFoodInCart.swift in Sources */,
 				7FD68E812B2F8CB500699F09 /* UIImageView+Extension.swift in Sources */,
 				7FDD74352B2EA7B000F0C50D /* SceneDelegate.swift in Sources */,
 				7FF129B12B30A1DF00EE2A1D /* MCartShopping+CoreDataClass.swift in Sources */,
@@ -391,6 +417,7 @@
 				7F3E3D3F2B30B76700E55E3E /* CustomStepperView.swift in Sources */,
 				7FDD746C2B2EAB2700F0C50D /* ApiCaller.swift in Sources */,
 				7FD68E872B2FC50F00699F09 /* CategoryFoodModel.swift in Sources */,
+				7F1D69C92B324A0800883EE6 /* CustomBadgeView.swift in Sources */,
 				7FD68E892B2FC58000699F09 /* CategoryFoodViewModel.swift in Sources */,
 				7FF129AB2B30A08C00EE2A1D /* ShoppingCart.xcdatamodeld in Sources */,
 			);
@@ -667,6 +694,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7F4349082B314FD6003ACD93 /* XCRemoteSwiftPackageReference "stripe-ios-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stripe/stripe-ios-spm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 23.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7F4349092B314FD6003ACD93 /* Stripe */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F4349082B314FD6003ACD93 /* XCRemoteSwiftPackageReference "stripe-ios-spm" */;
+			productName = Stripe;
+		};
+		7F43490B2B314FD6003ACD93 /* StripePaymentSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F4349082B314FD6003ACD93 /* XCRemoteSwiftPackageReference "stripe-ios-spm" */;
+			productName = StripePaymentSheet;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		7FF129A92B30A08C00EE2A1D /* ShoppingCart.xcdatamodeld */ = {
